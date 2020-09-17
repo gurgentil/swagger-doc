@@ -1,0 +1,6 @@
+type: object
+properties:
+  data:
+    $ref: 'tenant.yml'
+  meta:
+    $ref: '../meta.yml'

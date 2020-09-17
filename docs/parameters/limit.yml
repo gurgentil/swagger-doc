@@ -1,0 +1,8 @@
+in: query
+name: page[size]
+schema:
+  type: integer
+  default: 15
+  minimum: 0
+  exclusiveMinimum: true
+description: Sets the maximum number of records to be returned.

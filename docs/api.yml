@@ -1,0 +1,22 @@
+openapi: 3.0.0
+
+servers:
+  - description: Default
+    url: https://virtserver.swaggerhub.com/gurgentil/Test/1.0.0
+
+info:
+  version: '1.0.0'
+  title: Opsy API
+
+tags:
+  - name: tenants
+    description: Manage tenants
+
+security:
+  - bearerAuth: []
+
+paths:
+  /tenants:
+    $ref: 'paths/tenants/tenants.yml'
+  /tenants/{id}:
+    $ref: 'paths/tenants/tenants-id.yml'

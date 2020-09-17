@@ -1,0 +1,41 @@
+get:
+  tags:
+    - tenants
+  summary: Lists tenants.
+  operationId: listTenants
+  parameters:
+    - $ref: '../../parameters/sort.yml'
+    - $ref: '../../parameters/limit.yml'
+    - $ref: '../../parameters/page.yml'
+  responses:
+    '200':
+      description: A list of tenants.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/tenants/paged-tenants.yml'
+    '401':
+      $ref: '../../responses/unauthorized-error.yml'
+
+post:
+  tags:
+    - tenants
+  summary: Creates a tenant.
+  operationId: addTenants
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/tenants/tenant.yml'
+    description: Tenant to be created.
+  responses:
+    '201':
+      description: Tenant created.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/tenants/tenant.yml'
+    '401':
+      $ref: '../../responses/unauthorized-error.yml'
+    '422':
+      $ref: '../../responses/unprocessable-entity-error.yml'

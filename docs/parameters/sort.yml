@@ -1,0 +1,7 @@
+in: query
+name: sort
+schema:
+  type: string
+description: Sorts the records by the given attributes.
+  Use a negative symbol (-) before the attribute name
+  to sort those records in DESC order.

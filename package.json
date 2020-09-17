@@ -1,0 +1,17 @@
+{
+  "name": "swagger-doc",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "swagger:validate": "npx swagger-cli validate docs/api.yml",
+    "swagger:bundle": "npm run swagger:validate && npx swagger-cli bundle docs/api.yml --type yaml --outfile dist/api.yml"
+  },
+  "author": "Gustavo Rorato Gentil",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swagger-cli": "^4.0.4",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4"
+  }
+}

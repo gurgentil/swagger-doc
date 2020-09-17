@@ -1,0 +1,71 @@
+get:
+  tags:
+    - tenants
+  summary: Gets a tenant by ID.
+  operationId: getTenant
+  parameters:
+    - in: path
+      name: id
+      required: true
+      description: ID of the tenant
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: Tenant.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/tenants/tenant.yml'
+    '401':
+      $ref: '../../responses/unauthorized-error.yml'
+    '422':
+      $ref: '../../responses/unprocessable-entity-error.yml'
+
+put:
+  tags:
+    - tenants
+  summary: Updates a tenant.
+  operationId: updateTenants
+  parameters:
+    - in: path
+      name: id
+      required: true
+      description: ID of the tenant
+      schema:
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/tenants/tenant.yml'
+    description: Tenant data to be updated.
+  responses:
+    '200':
+      description: Tenant updated.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/tenants/tenant.yml'
+    '401':
+      $ref: '../../responses/unauthorized-error.yml'
+    '422':
+      $ref: '../../responses/unprocessable-entity-error.yml'
+
+delete:
+  tags:
+    - tenants
+  summary: Deletes a tenant.
+  operationId: deleteTenants
+  parameters:
+    - in: path
+      name: id
+      required: true
+      description: ID of the tenant
+      schema:
+        type: integer
+  responses:
+    '204':
+      $ref: '../../responses/no-content.yml'
+    '401':
+      $ref: '../../responses/unauthorized-error.yml'

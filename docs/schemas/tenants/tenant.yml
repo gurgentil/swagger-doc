@@ -1,0 +1,19 @@
+type: object
+properties:
+  id:
+    type: integer
+    readOnly: true
+  name:
+    type: string
+  database:
+    type: string
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+    example: '2019-11-09 22:33:31'
+  updated_at:
+    type: string
+    format: date-time
+    readOnly: true
+    example: '2019-11-09 22:33:31'
